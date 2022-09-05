@@ -1,0 +1,18 @@
+# install mariadb
+- sudo apt update
+- sudo apt install mariadb-server
+-systemctl status mysql (kiểm tra mysql có chạy chưa), nếu đang running là chạy
+
+# create lesson database
+- sudo mysql (mở mysql với quyền sudo)
+- show database (xem db hiện có)
+- create database lesson (tạo database lesson)
+- show database (check lại xem đã tạo thành công chưa)
+
+# tạo user và cấp quyền truy cập từ user
+- CREATE USER 'vuduy'@'localhost' IDENTIFIED BY 'passlesson'; (tạo user vuduy với pass là passlesson)
+- GRANT ALL PRIVILEGES ON *.* TO 'vuduy'@'localhost' WITH GRANT OPTION;
+- FLUSH PRIVILEGES;
+
+#test xem đã truy cập bằng user và pass vào được chưa
+- mysql -u vuduy -p (sau đó ấn enter và nhập password)
