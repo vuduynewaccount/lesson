@@ -10,10 +10,10 @@ func Path(app *fiber.App){
   })
 
   app.Get("/api-client/view/:id",implement.View)
-  app.Get("/api-client/list/page/:id",implement.List)
+  app.Get("/api-client/list",implement.List)
 
   app.Get("/api-admin/view/:id",implement.View)
-  app.Get("/api-admin/list/page/:id",implement.List)
+  app.Get("/api-admin/list",implement.List)
 
   app.Post("/api-admin/create",implement.AdminCreate)
   app.Post("/api-admin/delete/:id",implement.AdminDelete)
