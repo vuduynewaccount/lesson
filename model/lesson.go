@@ -2,7 +2,7 @@ package model
 import(
     "lesson-ms/database"
     // "github.com/mitchellh/mapstructure"
-//     "fmt"
+     "fmt"
     "github.com/gofiber/fiber/v2"
 )
 
