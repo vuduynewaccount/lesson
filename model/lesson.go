@@ -16,7 +16,6 @@ type Lesson struct{
 
 
 func(s *Lesson) getClientInput(c *fiber.Ctx){
-  fmt.Println("read input from client")
   // mapstructure.Decode(c.GetReqHeaders(), &header);//read headers
 
   if err := c.BodyParser(&s); err != nil {
@@ -39,6 +38,15 @@ func(s *Lesson) Create(c *fiber.Ctx){
 }
 
 
-func(s *Lesson) FindPost(id string){
-
+func(s *Lesson) ViewPost(c *fiber.Ctx){
+  id:=c.AllParams()["id"];
+  temp:=new(database.DbLesson)
+  database.DB.Raw("SELECT * FROM db_lessons WHERE id = ? LIMIT 1", id).Scan(temp);
+  increaseView=temp.View+1;
+  database.DB.Raw("UPDATE db_lessons SET View = ? WHERE id = ? LIMIT 1", increaseView,id)
+  s.Title     = dbLesson.Title
+  s.Thumbnail = dbLesson.Thumbnail
+  s.Min_read  = dbLesson.Min_read
+  s.Data      = dbLesson.Data
+  s.View      = dbLesson.View+1// vi update view
 }
