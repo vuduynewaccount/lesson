@@ -6,8 +6,9 @@ import(
 )
 
 func View(c *fiber.Ctx) error {
-  fmt.Println(c.AllParams()["id"])
+  lesson:=new(model.Lesson);
+  lesson.ViewPost(c);// truyen c vao vi body input nam o trong c
   resp:=new(model.Resp);
-  resp.Constructor(1,"view thanh cong","data")
+  resp.Constructor(1,"view thanh cong",lesson)
   return c.JSON(resp)
 }
