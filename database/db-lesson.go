@@ -5,9 +5,9 @@ import(
 
 type DbLesson struct{
   gorm.Model
-  Title       string
-  Thumbnail   string
-  Min_read    int
-  Data        string
-  View        int      
+  Title       string  `gorm:"index:,size:300;not null"`
+  Thumbnail   string  `gorm:"index:,size:120;not null"`
+  Min_read    int     `gorm:"index:,size:120;not null"`
+  Data        string  `gorm:not null"`
+  View        int     `gorm:"index:,size:120;not null"`
 }
