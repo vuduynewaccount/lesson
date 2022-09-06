@@ -2,6 +2,7 @@ package implement
 import(
   "github.com/gofiber/fiber/v2"
   "lesson-ms/database"
+  "lesson-ms/model"
 )
 
 func List(c *fiber.Ctx) error {
