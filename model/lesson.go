@@ -28,8 +28,13 @@ func(s *Lesson) getClientInput(c *fiber.Ctx){
 
 func(s *Lesson) Create(c *fiber.Ctx){
   s.getClientInput(c)
-  s.View = 0;// mac dinh luc tao chua co view nao
-  database.DB.Create(s);
+  dbLesson:=new(database.DbLesson)
+  dbLesson.Title    =s.Title
+  dbLesson.Thumbnail=s.Thumbnail
+  dbLesson.Min_read =s.Min_read
+  dbLesson.Data     =s.Data
+  dbLesson.View = 0;// mac dinh luc tao chua co view nao
+  database.DB.Create(&dbLesson);
 }
 
 
