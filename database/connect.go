@@ -11,11 +11,11 @@ var DB *gorm.DB
 var err error
 
 func InitialMigration(){
-  var DB_USERNAME string  = env.Get_env("DB_USERNAME")
-  var DB_PASSWORD string  = env.Get_env("DB_PASSWORD")
-  var DB_HOST     string  = env.Get_env("DB_HOST")
-  var DB_PORT     string  = env.Get_env("DB_PORT")
-  var DB_DATABASE string  = env.Get_env("DB_DATABASE")
+  var DB_USERNAME string  = utils.GetEnv("DB_USERNAME")
+  var DB_PASSWORD string  = utils.GetEnv("DB_PASSWORD")
+  var DB_HOST     string  = utils.GetEnv("DB_HOST")
+  var DB_PORT     string  = utils.GetEnv("DB_PORT")
+  var DB_DATABASE string  = utils.GetEnv("DB_DATABASE")
 
 
   DBDSN := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true",
