@@ -4,6 +4,7 @@ import(
       "gorm.io/gorm"
       "gorm.io/driver/mysql"
       "fmt"
+      "lesson-ms/utils"
 )
 
 var DB *gorm.DB
