@@ -2,7 +2,7 @@ package implement
 import(
   "github.com/gofiber/fiber/v2"
   "lesson-ms/model"
-  "fmt"
+//   "fmt"
 )
 
 func View(c *fiber.Ctx) error {
