@@ -10,5 +10,5 @@ func List(c *fiber.Ctx) error {
   database.DB.Raw("SELECT * FROM db_lessons").Scan(listLesson);
   resp:=new(model.Resp);
   resp.Constructor(1,"get list thanh cong",listLesson)
-  return c.SendString(resp)
+  return c.JSON(resp)
 }
