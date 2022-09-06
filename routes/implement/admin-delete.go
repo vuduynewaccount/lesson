@@ -1,6 +1,7 @@
 package implement
 import(
   "github.com/gofiber/fiber/v2"
+  "lesson-ms/model"
 )
 
 func AdminDelete(c *fiber.Ctx) error {
