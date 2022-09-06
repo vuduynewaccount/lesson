@@ -42,11 +42,11 @@ func(s *Lesson) ViewPost(c *fiber.Ctx){
   id:=c.AllParams()["id"];
   temp:=new(database.DbLesson)
   database.DB.Raw("SELECT * FROM db_lessons WHERE id = ? LIMIT 1", id).Scan(temp);
-  increaseView=temp.View+1;
+  increaseView:=temp.View+1;
   database.DB.Raw("UPDATE db_lessons SET View = ? WHERE id = ? LIMIT 1", increaseView,id)
-  s.Title     = dbLesson.Title
-  s.Thumbnail = dbLesson.Thumbnail
-  s.Min_read  = dbLesson.Min_read
-  s.Data      = dbLesson.Data
-  s.View      = dbLesson.View+1// vi update view
+  s.Title     = temp.Title
+  s.Thumbnail = temp.Thumbnail
+  s.Min_read  = temp.Min_read
+  s.Data      = temp.Data
+  s.View      = temp.View+1// vi update view
 }
