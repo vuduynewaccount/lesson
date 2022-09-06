@@ -3,7 +3,7 @@ package main
 import (
     "github.com/gofiber/fiber/v2"
     "lesson-ms/routes/routes"
-    // "lesson-ms/database"
+    "lesson-ms/database"
     "fmt"
     "github.com/joho/godotenv"
 )
