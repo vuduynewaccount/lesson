@@ -34,6 +34,11 @@ func(s *Lesson) Create(c *fiber.Ctx){
   dbLesson.Min_read =s.Min_read
   dbLesson.Data     =s.Data
   dbLesson.View = 0;// mac dinh luc tao chua co view nao
+  fmt.Println(dbLesson.Title    )//=s.Title
+  fmt.Println(dbLesson.Thumbnail)//=s.Thumbnail
+  fmt.Println(dbLesson.Min_read )//=s.Min_read
+  fmt.Println(dbLesson.Data     )//=s.Data
+  fmt.Println(dbLesson.View)//// mac dinh luc tao chua co view nao
   database.DB.Create(&dbLesson);
 }
 
