@@ -22,7 +22,7 @@ func main() {
 		fmt.Println("Fiber can't load env  ", err)
 	}
   // connect to database
-  // database.InitialMigration()
+  database.InitialMigration()
 
   routes.Path(app)
   if err := app.Listen(":3000"); err != nil {
