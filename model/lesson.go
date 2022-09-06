@@ -52,5 +52,5 @@ func(s *Lesson) ViewPost(c *fiber.Ctx){
 }
 
 func(s *Lesson) Delete(id string){
-  database.DB.Raw("Delete FROM db_lessons WHERE id = ?", id)
+  database.DB.Delete(&DbLesson{}, id)
 }
