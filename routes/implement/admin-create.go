@@ -14,5 +14,5 @@ func AdminCreate(c *fiber.Ctx) error {
   resp:=new(model.Resp);
   resp.Constructor(1,"create successly",lesson)
 
-  return c.JSON("admin create list")
+  return c.JSON(resp)
 }
