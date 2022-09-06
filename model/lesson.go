@@ -1,6 +1,6 @@
 package model
 import(
-    // "lesson-ms/database"
+    "lesson-ms/database"
     // "github.com/mitchellh/mapstructure"
     "fmt"
     "github.com/gofiber/fiber/v2"
@@ -29,7 +29,7 @@ func(s *Lesson) getClientInput(c *fiber.Ctx){
 func(s *Lesson) Create(c *fiber.Ctx){
   s.getClientInput(c)
   s.View = 0;// mac dinh luc tao chua co view nao
-  db.create(s);
+  database.DB.Create(s);
 }
 
 
