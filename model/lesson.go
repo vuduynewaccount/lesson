@@ -2,7 +2,7 @@ package model
 import(
     "lesson-ms/database"
     // "github.com/mitchellh/mapstructure"
-     "fmt"
+    // "fmt"
     "github.com/gofiber/fiber/v2"
 )
 
@@ -49,4 +49,8 @@ func(s *Lesson) ViewPost(c *fiber.Ctx){
   s.Min_read  = temp.Min_read
   s.Data      = temp.Data
   s.View      = temp.View+1// vi update view
+}
+
+func(s *Lesson) Delete(id string){
+  database.DB.Raw("Delete FROM db_lessons WHERE id = ?", id)
 }
