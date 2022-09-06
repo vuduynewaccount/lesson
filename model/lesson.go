@@ -52,5 +52,5 @@ func(s *Lesson) ViewPost(c *fiber.Ctx){
 }
 
 func(s *Lesson) Delete(id string){
-  database.DB.Delete(&DbLesson{}, id)
+  database.DB.Delete(&database.DbLesson{}, id)
 }
