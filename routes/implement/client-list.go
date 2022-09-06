@@ -1,10 +1,13 @@
 package implement
 import(
   "github.com/gofiber/fiber/v2"
-  "fmt"
+  "lesson-ms/database"
 )
 
 func List(c *fiber.Ctx) error {
-  fmt.Println(c.AllParams()["id"])
-  return c.SendString("client viewing list")
+  listLesson:=[] database.Lesson;
+  database.DB.Raw("SELECT * FROM db_lessons").Scan(listLesson);
+  resp:=new(model.Resp);
+  resp.Constructor(1,"get list thanh cong",listLesson)
+  return c.SendString(resp)
 }
